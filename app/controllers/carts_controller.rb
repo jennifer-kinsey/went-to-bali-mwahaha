@@ -7,7 +7,6 @@ class CartsController < ApplicationController
     @order_items = current_order.order_items
     respond_to do |format|
       format.html { redirect_to products_path }
-      # format.js
     end
   end
 
