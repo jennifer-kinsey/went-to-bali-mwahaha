@@ -5,8 +5,9 @@
   <% @products.each do |product| %>
     <div class="col s4">
       <h4><%= product.name %></h4>
-      <p><%= product.description %></p>
-      <p><%= number_to_currency product.price %></p>
+      <%= link_to "Click for details", product_path(product), remote: true, id: "product_link" %>
+      <div id="product-content" style="display:none;">
+      </div>
 
       <div id="cart-content">
         <%= form_for @order_item, remote: true do |f|%>
