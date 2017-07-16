@@ -3,6 +3,9 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    # if Product.find(params[:id]) != nil
+    #   @product = Product.find(params[:id])
+    # end
     @order_item = current_order.order_items.new
   end
 

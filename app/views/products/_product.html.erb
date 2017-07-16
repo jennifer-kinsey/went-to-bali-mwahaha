@@ -1,3 +1,4 @@
 <p><%= @product.description %></p>
 <p><%= number_to_currency @product.price %></p>
 <%= image_tag @product.image %>
+<%= link_to "hide details", products_path, remote: true, id: "hide_link_#{@product.id}>" %>

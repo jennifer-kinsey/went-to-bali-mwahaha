@@ -1,3 +1,4 @@
-$('#product_link').hide();
-$('#product-content').show().html('<%= j render("product") %>');
-$('#product-content').slideDown(350);
+$('#product-link-<%=@product.id%>').hide();
+console.log('#product-content-<%=@product.id%>')
+$('#product-content-<%=@product.id%>').show().html('<%= j render("product") %>');
+$('#product-content-<%=@product.id%>').slideDown(350);

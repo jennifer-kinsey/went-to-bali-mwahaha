@@ -5,8 +5,8 @@
   <% @products.each do |product| %>
     <div class="col s4">
       <h4><%= product.name %></h4>
-      <%= link_to "Click for details", product_path(product), remote: true, id: "product_link" %>
-      <div id="product-content" style="display:none;">
+      <%= link_to "Click for details", product_path(product), remote: true, id: "product-link-#{product.id}" %>
+      <div id="product-content-<%=product.id%>">
       </div>
 
       <div id="cart-content">
