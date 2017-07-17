@@ -3,10 +3,11 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    # if Product.find(params[:id]) != nil
-    #   @product = Product.find(params[:id])
-    # end
     @order_item = current_order.order_items.new
+    respond_to do |format|
+      format.html { redirect_to hide_details_path }
+      format.js
+    end
   end
 
   def show
@@ -15,6 +16,10 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_path }
       format.js
     end
+  end
+
+  def hide_details
+    @product = Product.find(params[:id])
   end
 
   def new
