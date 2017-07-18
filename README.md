@@ -9,18 +9,19 @@ password: "000000".
 
 One of the objectives to this project was to jump into a preexisting code base, fix bugs, refactor, and AJAX calls. The following additions were made to the site:
 * Ensure that users can't order a negative number of items.
+* Add further AJAX functionality where it might be useful. (eg, update product qty in nav bar on delete of products, update total price in cart on delete of product)
 
 
 
 ## Setup:
 
-* Clone this repo: `git clone https://github.com/jennifer-kinsey/son-of-cod.git`
+* Clone this repo: `git clone https://github.com/jennifer-kinsey/went-to-bali-mwahaha.git`
 
-* run Bundle": `bundle install`
+* run Bundle: `bundle install`
 
 * make sure `postgres` is running in a terminal locally
 
-* creating, initializing, and seeding the database with the next command: `rake db:setup`
+* creating, initializing, and seeding the database with the next command: `rails db:setup`
 
 * serve locally: `rails s`
 
