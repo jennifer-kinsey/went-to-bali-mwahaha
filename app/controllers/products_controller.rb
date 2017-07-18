@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
   before_filter :authorize, except: [:index, :show]
+  before_action :only => [:new, :create, :edit, :update, :destroy] do
+    redirect_to new_user_session_path unless admin
+  end
 
   def index
     @products = Product.all
@@ -19,9 +22,14 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @products = Product.all
     @product = Product.new(product_params)
     if @product.save
-      redirect_to '/'
+      flash[:notice] = "Product created."
+      respond_to do |format|
+        format.html { redirect_to products_path }
+        format.js
+      end
     else
       render :new
     end

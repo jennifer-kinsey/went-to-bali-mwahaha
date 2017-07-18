@@ -1,0 +1,17 @@
+<% @products.each do |product| %>
+  <div class="col s4">
+    <h4><%= product.name %></h4>
+    <%= link_to "Show/hide details", product_path(product), remote: true, id: "product-link-#{product.id}" %>
+    <div id="product-content-<%=product.id%>" style="display: none;">
+    </div>
+
+    <div id="cart-content">
+      <%= form_for @order_item, remote: true do |f|%>
+      <%= f.hidden_field :product_id, value: product.id %>
+      <%= f.number_field :quantity, value: 1, min: 1 %>
+      <span class="waves-effect waves-light btn"><%= f.submit "Add to cart" %></span>
+      <% end %>
+    </div>
+
+  </div>
+<% end %>

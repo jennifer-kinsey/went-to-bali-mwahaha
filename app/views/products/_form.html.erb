@@ -1,0 +1,17 @@
+<%= render "shared/errors", object: @product %>
+
+<%= form_for @product, remote: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: :"form-control" %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description, class: :"form-control" %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price, class: :"form-control", type: :number %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image, class: :"form-control" %>
+
+  <%= f.submit %>
+<% end %>

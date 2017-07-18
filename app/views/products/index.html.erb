@@ -1,5 +1,9 @@
 <h3>Products</h3>
-
+<div class="well">
+  <% if current_user.try(:admin?) %>
+    <%= link_to "Add New Product", new_product_path, remote: true, id: "new_product_link" %>
+  <% end %>
+</div>
 <div class="row">
   <div class="section">
   <% @products.each do |product| %>
