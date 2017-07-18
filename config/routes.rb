@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get 'sign_out' => 'sessions#destroy'
 
   resources :products
-  get 'hide_details' => "products#hide_details"
-  
+  # get 'hide_details' => "products#hide_details"
+
   resources :order_items
   resource :cart, only: [:show]
 
