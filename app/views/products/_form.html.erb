@@ -8,7 +8,9 @@
   <%= f.text_field :description, class: :"form-control" %>
 
   <%= f.label :price %>
-  <%= f.text_field :price, class: :"form-control", type: :number %>
+  <%= f.number_field :price, class: :"form-control",
+        value: number_to_currency(f.object.price.to_f,
+        delimiter: '', unit: ''), step: 0.01 %>
 
   <%= f.label :image %>
   <%= f.text_field :image, class: :"form-control" %>
