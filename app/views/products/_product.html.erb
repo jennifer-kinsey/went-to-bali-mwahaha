@@ -1,3 +1,13 @@
 <p><%= @product.description %></p>
 <p><%= number_to_currency @product.price %></p>
 <%= image_tag @product.image %>
+
+<% if current_user.try(:admin?) %>
+<div class="alert alert-danger" role="alert">
+  <h2>Admins Only: Use Caution</h2>
+  <p><%= link_to "Edit Product", edit_product_path(@product) %></p>
+  <p><%= link_to "Delete Product", product_path(@product),
+           :data => {:confirm => "You sure?",
+                   :method => "delete"} %></p>
+<% end %>
+</div>

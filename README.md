@@ -9,7 +9,9 @@ password: "000000".
 
 One of the objectives to this project was to jump into a preexisting code base, fix bugs, refactor, and AJAX calls. The following additions were made to the site:
 * Ensure that users can't order a negative number of items.
-* Add further AJAX functionality where it might be useful. (eg, update product qty in nav bar on delete of products, update total price in cart on delete of product)
+* Add further AJAX functionality where it might be useful. (Two examples: update product qty in nav bar on delete of products, update total price in cart on delete of product)
+* Add product update and delete functionality for admins.
+* Add admin flash messages for adding, updating and deleting products.
 
 
 
