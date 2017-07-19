@@ -13,6 +13,7 @@ One of the objectives to this project was to jump into a preexisting code base, 
 * Add product update and delete functionality for admins.
 * Add admin flash messages for adding, updating and deleting products.
 * Allow other than whole dollar amounts for admin product creation (for instance, 3.99).
+* Add product validations.
 
 
 
